@@ -3,9 +3,6 @@ import pandas as pd
 
 st.title("🌜🌜Wedsite Developing using Python")
 #st.header("🌟Wedsite Developing using Python🌟")
-#Index(['sepal.length', 'sepal.width', 'petal.length', 'petal.width',
-#       'variety'],
-
 st.subheader("🌝Phurin Kwanjira🌝")
 st.image('012.jpg')
 
@@ -14,6 +11,8 @@ dt=pd.read_csv('./data/iris.csv')
 
 st.subheader("ข้อมูลดอกไม้ Iris")
 st.write(dt.head(10))
+#Index(['sepal.length', 'sepal.width', 'petal.length', 'petal.width',
+#       'variety'], 
 
 st.subheader("สถิติข้อมูลดอกไม้ Iris")
 st.write('ผลรวม')
@@ -22,6 +21,9 @@ cl1.write(dt['sepal.length'].sum())
 cl2.write(dt['sepal.width'].sum())
 cl3.write(dt['petal.length'].sum())
 cl4.write(dt['petal.width'].sum())
+cols=['sepal.length', 'sepal.width','petal.length']
+dx=dt[cols]
+st.bar_chart(dx,x='sepal.length',y='sepal.width',color='petal.length')
 
 st.write('ค่าเฉลี่ย')
 cl11,cl12,cl13,cl14=st.columns(4)
